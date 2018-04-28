@@ -1,1 +1,1 @@
-web: gunicorn app.hello.wgsi
+web: gunicorn helloapp.wgsi
