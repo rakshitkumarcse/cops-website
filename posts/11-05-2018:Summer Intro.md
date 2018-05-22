@@ -1,12 +1,9 @@
 ---
-title: "COPS Summer Bootcamp"
-author: Govinda Totla
-tags:
-- intro
-- vim
+title=COPS Summer Bootcamp
+author=Govinda Totla
+tags=intro,vim
+image=https://www.facebook.com/cops.iitbhu/photos/a.438916712980907.1073741827.438913529647892/464538130418765/
 
-image:
-  url: https://www.facebook.com/cops.iitbhu/photos/a.438916712980907.1073741827.438913529647892/464538130418765/
 ---
 
 With summers come the scorching sun, an array of refreshing beverages and lots of free time. We can't do much about the first two, but we certainly have some plans to help you overcome the inertia and make your summers productive in an intriguing way. The Club of Programmers, IIT BHU Varanasi presents "COPS Summer Camp", a summer-long initiative to help you pursue your interests by learning new stuff, assessing your progress and winning goodies along the way!

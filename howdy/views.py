@@ -1,9 +1,10 @@
-from django.http import HttpResponse
 import markdown
 from mdx_gfm import GithubFlavoredMarkdownExtension
 from django.shortcuts import render
-from django.views.generic import TemplateView, View
+from django.views.generic import TemplateView
 from csv import reader
+from io import StringIO
+from os import listdir
 
 
 # Create your views here.
@@ -17,7 +18,44 @@ class AboutPageView(TemplateView):
 
 
 class PostsPageView(TemplateView):
+    # Read the files in `posts` folder
+    files = [f for f in listdir('posts')]
+
+    # Post Tile Structure:
+    # 0 : Post Title
+    # 1 : Post Author
+    # 2 : Time Posted
+    # 3 : Tags
+    # 4 : Image URL
+    posts = []
+
+    for filename in files:
+        # Open the post.md file
+        with open("posts/"+filename, "r") as f:
+            content = f.read()
+
+        i = content.find("---", 3)  # Get the ending ---, not the starting one
+        content = content[4:i-2]       # Keep the header, remove everything else
+
+        S = StringIO(content)
+        mReader = reader(S, delimiter='=')
+        temp = []
+
+        for row in mReader:
+            temp.append(row[1:2][0])
+
+        # Add posting date too
+        i = filename.find(":")
+        temp.append(filename[:i])
+
+        posts.append(temp)
+
     template_name = "posts.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['list_of_posts'] = self.posts
+        return context
 
 
 class ShowMD(TemplateView):
@@ -29,6 +67,8 @@ class ShowMD(TemplateView):
         with open('posts/README.md', 'r') as myfile:
             content = myfile.read()
 
+        i = content.find("---", 3)  # Get the ending ---, not the starting one
+        content = content[i:]  # Remove the header from content
 
         md = markdown.Markdown(extensions=[GithubFlavoredMarkdownExtension()])
         html = md.convert(content)
