@@ -13,8 +13,8 @@ class AboutPageView(TemplateView):
     template_name = "about.html"
 
 
-class BlogPageView(TemplateView):
-    template_name = "blog.html"
+class PostsPageView(TemplateView):
+    template_name = "posts.html"
 
 
 class ContactPageView(TemplateView):
