@@ -1,5 +1,8 @@
+from django.http import HttpResponse
+import markdown
+from mdx_gfm import GithubFlavoredMarkdownExtension
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
 from csv import reader
 
 
@@ -15,6 +18,23 @@ class AboutPageView(TemplateView):
 
 class PostsPageView(TemplateView):
     template_name = "posts.html"
+
+
+class ShowMD(TemplateView):
+    template_name = 'markdown.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        with open('posts/README.md', 'r') as myfile:
+            content = myfile.read()
+
+
+        md = markdown.Markdown(extensions=[GithubFlavoredMarkdownExtension()])
+        html = md.convert(content)
+
+        context['markdown_content'] = html
+        return context
 
 
 class ContactPageView(TemplateView):
