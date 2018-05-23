@@ -21,15 +21,21 @@
 
               <!-- Blog Post -->
               <div class="card mb-4">
-                <img class="card-img-top" src="{{ post.3 }}">
+                <div style="width: 40%">
+                   <img class="card-img-top" style="max-height: 100%;max-width: 100%;" src="{{ post.3 }}">
+                </div>
                 <div class="card-body">
                   <h2 class="card-title">{{ post.0 }}</h2>
-                  <p class="card-text">{{ post.2 }}</p>
-                  <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                  <p class="card-text">
+                      {% for tag in post.2 %}
+                          <a href="#">#{{ tag }}</a>
+                      {% endfor %}
+                  </p>
+                  <a href="/markdown/?id=posts/{{ post.5 }}" class="btn btn-primary">Read More</a>
                 </div>
                 <div class="card-footer text-muted">
                   Posted on {{ post.4 }} by
-                  <a href="#">{{ post.1 }}</a>
+                  <a href="/contact">{{ post.1 }}</a>
                 </div>
               </div>
 
@@ -104,4 +110,3 @@
       <!-- /.row -->
 
 {% endblock %}
-        

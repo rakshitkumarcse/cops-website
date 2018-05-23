@@ -2,7 +2,7 @@
 title=COPS Summer Bootcamp
 author=Govinda Totla
 tags=intro,vim
-image=https://www.facebook.com/cops.iitbhu/photos/a.438916712980907.1073741827.438913529647892/464538130418765/
+image=https://firebasestorage.googleapis.com/v0/b/cops-iitbhu.appspot.com/o/logo.jpg?alt=media&token=d6f4c531-bec6-483e-83b3-166861c19d35
 
 ---
 
