@@ -3,3 +3,4 @@ Django==2.0.4
 python-decouple
 py-gfm
 markdown
+whitenoise
