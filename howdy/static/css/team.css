@@ -1,0 +1,73 @@
+.team_page{
+    background-image: url("https://s3.envato.com/files/242193613/preview.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.nav {
+    width: 100vh;
+    background-color: black;
+}
+
+.head_title {
+    margin: 2%;
+}
+
+.line_style {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.main_team_area{
+    overflow: hidden;
+}
+.main_team_area .main_team_content{
+    margin-bottom:80px;
+    display: inline-block;
+}
+
+.single_team:hover .team_socail_area{
+    max-height: 40px;
+    overflow: hidden;
+
+}
+.single_team{
+    overflow: hidden;
+}
+
+.team_socail_area{
+    -webkit-transition: max-height 1s; 
+    -moz-transition: max-height 1s; 
+    -ms-transition: max-height 1s; 
+    -o-transition: max-height 1s; 
+    transition: max-height 1s;  
+    overflow: hidden;
+    max-height: 0;
+}
+.team_socail_area a i{
+    color:#cecece;
+    padding: 5px;
+    transition: all 0.6s;
+}
+.team_socail_area a:hover i{
+    color:#444;
+}
+
+.main_team_area .single_team img{
+    width:100%;
+}
+.main_team_area .single_team .single_team_text{
+    opacity: 1.0;
+    padding: 20px;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+.main_team_area .single_team .single_team_text h6{
+    font-weight: 700;
+    color:#231f20;
+}
+.main_team_area .single_team .single_team_text{
+    font-weight: 300;
+}
