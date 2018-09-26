@@ -13,6 +13,10 @@ class HomePageView(TemplateView):
         return render(request, 'index.html', context=None)
 
 
+class TimelinePageView(TemplateView):
+    template_name = "timeline.html"
+
+
 class AboutPageView(TemplateView):
     template_name = "about.html"
 

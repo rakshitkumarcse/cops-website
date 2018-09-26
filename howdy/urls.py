@@ -2,7 +2,7 @@ from django.conf.urls import url
 from howdy import views
 
 urlpatterns = [
-    url(r'^$', views.AboutPageView.as_view()),
+    url(r'^$', views.TimelinePageView.as_view()),
     url(r'^about$', views.AboutPageView.as_view()),
     url(r'^contact$', views.ContactPageView.as_view()),
     url(r'^posts', views.PostsPageView.as_view()),
