@@ -7,12 +7,6 @@ from io import StringIO
 from os import listdir
 
 
-# Create your views here.
-class HomePageView(TemplateView):
-    def get(self, request, **kwargs):
-        return render(request, 'index.html', context=None)
-
-
 class TimelinePageView(TemplateView):
     template_name = "timeline.html"
 
