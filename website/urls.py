@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from howdy import views
+from website import views
 
 urlpatterns = [
     url(r'^$', views.TimelinePageView.as_view()),

@@ -1,5 +1,5 @@
 """
-WSGI config for helloapp project.
+WSGI config for core project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -17,6 +17,6 @@ if path not in sys.path:
     sys.path.append(path)
 
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "helloapp.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
 
 application = get_wsgi_application()

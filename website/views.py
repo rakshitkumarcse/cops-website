@@ -84,7 +84,7 @@ class ShowMD(TemplateView):
 
 class ContactPageView(TemplateView):
     # Read the csv file coordinators.csv
-    with open("howdy/coordinators.csv", "r") as f:
+    with open("website/coordinators.csv", "r") as f:
         r = reader(f)
         rest = [row for row in r]
         rest = rest[1:]  # Remove the top row: Name, Email, etc
