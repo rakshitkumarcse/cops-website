@@ -7,6 +7,9 @@ from io import StringIO
 from os import listdir
 
 
+class HomePageView(TemplateView):
+    template_name = "index.html"
+
 class TimelinePageView(TemplateView):
     template_name = "timeline.html"
 
