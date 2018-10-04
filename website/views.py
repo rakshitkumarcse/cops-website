@@ -10,6 +10,11 @@ from os import listdir
 class HomePageView(TemplateView):
     template_name = "index.html"
 
+
+class TeamPageView(TemplateView):
+    template_name = "team.html"
+
+
 class TimelinePageView(TemplateView):
     template_name = "timeline.html"
 
