@@ -1,169 +1,193 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>COPS, IIT(BHU)</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+    <meta charset="utf-8">
+    <title>COPS, IIT(BHU)</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
- <!-- Favicons -->
-  <link href="{% static 'img/favicon.png' %}" rel="icon">
-  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="{% static 'img/favicon.png' %}" rel="icon">
+    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
+          rel="stylesheet">
 
-  <!-- Bootstrap CSS File -->
-  <link href="{% static '/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="{% static '/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
-  <!-- Libraries CSS Files -->
-  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-  <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
 
-  <!-- Main Stylesheet File -->
-  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
-
-  <!--==========================
-  Header
-  ============================-->
-  <header id="header">
+</head>
+<body>
+<!--==========================
+Header
+============================-->
+<header id="header">
     <div class="container">
 
-      <div id="logo" class="pull-left">
-        <a href="#hero"><img src="{% static 'img/logo.png' %}" alt="" title="" /></img></a>
-       
-      </div>
+        <div id="logo" class="pull-left">
+            <a href="#hero"><img src="{% static 'img/logo.png' %}" alt="" title=""/></a>
 
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li class="menu-active waves-effect active" style="height:5px;"><a href="#hero">Home</a></li>
-          <li><a href="#" class="btn waves-effect waves-brown waves-ripple">Blogs</a></li>
-	  <li><a href="#about" class="btn waves-effect waves-brown waves-ripple">About</a></li>
-	  <li><a href="#facts" class="btn waves-effect waves-brown waves-ripple">Stats</a></li>	
-          <li><a href="#services" class="btn waves-effect waves-brown waves-ripple">Projects</a></li>
-	  <li><a href="#" class="btn waves-effect waves-brown waves-ripple">Blogs</a></li>
-          <li><a href="#team" class="btn waves-effect waves-brown waves-ripple">Team</a></li>
-          <li><a href="#contact" class="btn waves-effect waves-brown waves-ripple">Contact Us</a></li>
-        </ul>
-      </nav><!-- #nav-menu-container -->
+        </div>
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li class="menu-active waves-effect active" style="height:5px;"><a href="#hero">Home</a></li>
+                <li><a href="#" class="btn waves-effect waves-brown waves-ripple">Blogs</a></li>
+                <li><a href="#about" class="btn waves-effect waves-brown waves-ripple">About</a></li>
+                <li><a href="#facts" class="btn waves-effect waves-brown waves-ripple">Stats</a></li>
+                <li><a href="#services" class="btn waves-effect waves-brown waves-ripple">Projects</a></li>
+                <li><a href="#" class="btn waves-effect waves-brown waves-ripple">Blogs</a></li>
+                <li><a href="#team" class="btn waves-effect waves-brown waves-ripple">Team</a></li>
+                <li><a href="#contact" class="btn waves-effect waves-brown waves-ripple">Contact Us</a></li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
     </div>
-  </header><!-- #header -->
+</header><!-- #header -->
 
-  <!--==========================
-    Hero Section
-  ============================-->
-  <section id="hero">
+<!--==========================
+  Hero Section
+============================-->
+<section id="hero">
     <div class="hero-container">
-	<div class="cc-profile-image"><a><img src="{% static 'img/favicon.png' %}" alt="Image"/></a></div>
-      <h1 style="color:#f7f7f7;">Welcome to COPS</h1>
-      <div class="btn-group">
-			<div class="text-center btn-space">
-				<div class="icon-circle">
-					<a href="https://www.facebook.com/cops.iitbhu/" target="_blank" class="ifacebook" title="Follow us on Facebook"><i class="fa fa-facebook"></i></a>
-				</div>
-			</div>
-     
-			<div class="text-center btn-space">
-				<div class="icon-circle">
-					<a href="https://github.com/COPS-IITBHU/" target="_blank" class="igithub" title="Follow us on GitHub"><i class="fa fa-github"></i></a>
-				</div>
-			</div>
-      
-			<div class="text-center btn-space">
-				<div class="icon-circle">
-					<a href="https://groups.google.com/forum/#!forum/cops-summer-bootcamp" target="_blank" class="igoogle" title="Follow us on our Google group"><i class="fa fa-google"></i></a>
-				</div>
-			</div>
-      
-			<div class="text-center btn-space">
-				<div class="icon-circle">
-					<a href="https://cops-iitbhu.slack.com/" target="_blank" class="islack" title="Join our workspace on Slack"><i class="fa fa-slack"></i></a>
-				</div>
-			</div>
-			<div class="text-center btn-space">
-				<div class="icon-circle">
-					<a href="http://codeforces.com/group/kBMG2k5WAX/blog" target="_blank" class="icode" title="Join our group on Codeforces"><i class="fa fa-code"></i></a>
-				</div>
-			</div>
-    </div>
-  </section><!-- #hero -->
+        <div class="cc-profile-image"><a><img src="{% static 'img/favicon.png' %}" alt="Image"/></a></div>
+        <h1 style="color:#f7f7f7;">Welcome to COPS</h1>
+        <div class="btn-group">
+            <div class="text-center btn-space">
+                <div class="icon-circle">
+                    <a href="https://www.facebook.com/cops.iitbhu/" target="_blank" class="ifacebook"
+                       title="Follow us on Facebook"><i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
 
-  <main id="main">
+            <div class="text-center btn-space">
+                <div class="icon-circle">
+                    <a href="https://github.com/COPS-IITBHU/" target="_blank" class="igithub"
+                       title="Follow us on GitHub"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="text-center btn-space">
+                <div class="icon-circle">
+                    <a href="https://groups.google.com/forum/#!forum/cops-summer-bootcamp" target="_blank"
+                       class="igoogle" title="Follow us on our Google group"><i class="fa fa-google"></i></a>
+                </div>
+            </div>
+
+            <div class="text-center btn-space">
+                <div class="icon-circle">
+                    <a href="https://cops-iitbhu.slack.com/" target="_blank" class="islack"
+                       title="Join our workspace on Slack"><i class="fa fa-slack"></i></a>
+                </div>
+            </div>
+            <div class="text-center btn-space">
+                <div class="icon-circle">
+                    <a href="http://codeforces.com/group/kBMG2k5WAX/blog" target="_blank" class="icode"
+                       title="Join our group on Codeforces"><i class="fa fa-code"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- #hero -->
+
+<main id="main">
 
     <!--==========================
       About Us Section
     ============================-->
     <section id="about">
-      <div class="container">
-        <div class="row about-container">
+        <div class="container">
+            <div class="row about-container">
 
-          <div class="col-lg-12 content order-lg-1 order-2">
-            <h2 class="title" style="text-align:center">Few Words About Us</h2>
-            <p>
-              In this age of increasing automation, programming is not only limited to computer science and related fields. Every competent engineer needs to know how to program. This makes <a href="https://www.facebook.com/cops.iitbhu/" target="_blank">Club of Programmers</a> one of the most important clubs in the institute.
-</p>
+                <div class="col-lg-12 content order-lg-1 order-2">
+                    <h2 class="title" style="text-align:center">Few Words About Us</h2>
+                    <p>
+                        In this age of increasing automation, programming is not only limited to computer science and
+                        related fields. Every competent engineer needs to know how to program. This makes <a
+                            href="https://www.facebook.com/cops.iitbhu/" target="_blank">Club of Programmers</a> one of
+                        the most important clubs in the institute.
+                    </p>
 
-<p>
-Club of Programmers (or better known as COPS) understands this responsibility and plays a crucial part in maintaining the coding culture in the institute. Introductory workshops are held for freshers to introduce them to the various facets of programming. Regular competitions are held for the general student body to test and sharpen their programming skills. COPS also has an essential role in the successful conduction of Technex, the institute’s techno-management festival. ICM(International Coding Marathon) event organised by COPS in <a href="https://www.facebook.com/technexiitbhu/" target="_blank">Technex</a>, the technical fest of IIT(BHU), attracts the maximum participation in the fest.
-</p>
-<p>
+                    <p>
+                        Club of Programmers (or better known as COPS) understands this responsibility and plays a
+                        crucial part in maintaining the coding culture in the institute. Introductory workshops are held
+                        for freshers to introduce them to the various facets of programming. Regular competitions are
+                        held for the general student body to test and sharpen their programming skills. COPS also has an
+                        essential role in the successful conduction of Technex, the institute’s techno-management
+                        festival. ICM(International Coding Marathon) event organised by COPS in <a
+                            href="https://www.facebook.com/technexiitbhu/" target="_blank">Technex</a>, the technical
+                        fest of IIT(BHU), attracts the maximum participation in the fest.
+                    </p>
+                    <p>
 
-Although the club has been functioning quite well as compared to other clubs, still a lot needs to be done. Some great initiatives were taken by the current secretaries, including the formation of smaller groups focussed on specific areas (competitive programming group, development group and machine learning group) and the fresher’s mentorship program. Still there are lot of things that the club can improve upon. We hope that we are able to take this momentum forward.</p>
+                        Although the club has been functioning quite well as compared to other clubs, still a lot needs
+                        to be done. Some great initiatives were taken by the current secretaries, including the
+                        formation of smaller groups focussed on specific areas (competitive programming group,
+                        development group and machine learning group) and the fresher’s mentorship program. Still there
+                        are lot of things that the club can improve upon. We hope that we are able to take this momentum
+                        forward.</p>
+                </div>
+            </div>
+        </div>
     </section><!-- #about -->
 
 
-<section id="call-to-action">
-      <div class="container wow fadeIn">
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-left">
- 
-           
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
+    <section id="call-to-action">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-lg-9 text-center text-lg-left">
 
-          </div>
+
+                </div>
+                <div class="col-lg-3 cta-btn-container text-center">
+
+                </div>
+            </div>
+
         </div>
-
-      </div>
     </section><!-- #call-to-action -->
     <!--==========================
       Facts Section
     ============================-->
     <section id="facts">
-      <div class="container wow fadeIn">
-        <div class="section-header">
-          <h3 class="section-title">Stats</h3>
-          <p class="section-description"></p>
+        <div class="container wow fadeIn">
+            <div class="section-header">
+                <h3 class="section-title">Stats</h3>
+                <p class="section-description"></p>
+            </div>
+            <div class="row counters">
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-toggle="counter-fixed">34</span>
+                    <p>Team members</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-toggle="counter-fixed">26</span>
+                    <p>Projects</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-toggle="counter-fixed">4,543</span>
+                    <p>Hours Of Work</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-toggle="counter-fixed">100</span>
+                    <p>Determination</p>
+                </div>
+
+            </div>
+
         </div>
-        <div class="row counters">
-
-  				<div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-fixed">34</span>
-            <p>Team members</p>
-  				</div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-fixed">26</span>
-            <p>Projects</p>
-  				</div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-fixed">4,543</span>
-            <p>Hours Of Work</p>
-  				</div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-fixed">100</span>
-            <p>Determination</p>
-  				</div>
-
-  			</div>
-
-      </div>
     </section><!-- #facts -->
 
     <!--==========================
@@ -228,18 +252,18 @@ Although the club has been functioning quite well as compared to other clubs, st
     Call To Action Section
     ============================-->
     <section id="call-to-action">
-      <div class="container wow fadeIn">
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-left">
- 
-           
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-lg-9 text-center text-lg-left">
 
-          </div>
+
+                </div>
+                <div class="col-lg-3 cta-btn-container text-center">
+
+                </div>
+            </div>
+
         </div>
-
-      </div>
     </section><!-- #call-to-action -->
 
     <!--==========================
@@ -393,91 +417,94 @@ Although the club has been functioning quite well as compared to other clubs, st
       Contact Section
     ============================-->
     <section id="contact">
-      <div class="container wow fadeInUp">
-        <div class="section-header">
-          <h3 class="section-title">Contact Us</h3>
-          <p class="section-description" style="text-color:black"><strong>Feel free to contact us.</strong></p>
+        <div class="container wow fadeInUp">
+            <div class="section-header">
+                <h3 class="section-title">Contact Us</h3>
+                <p class="section-description" style="text-color:black"><strong>Feel free to contact us.</strong></p>
+            </div>
         </div>
-      </div>
 
-      <div class="container wow fadeInUp">
-        <div class="row justify-content-center">
+        <div class="container wow fadeInUp">
+            <div class="row justify-content-center">
 
-          <div class="col-lg-3 col-md-4">
+                <div class="col-lg-3 col-md-4">
 
-            <div class="info">
-              <div>
-                <i class="fa fa-map-marker" style="font-size:30px text-align:center"></i>
-                <p>IIT(BHU) Varanasi,<br>U.P.<br>India - 221005</p>
-              </div>
+                    <div class="info">
+                        <div>
+                            <i class="fa fa-map-marker" style="font-size:30px; text-align:center"></i>
+                            <p>IIT(BHU) Varanasi,<br>U.P.<br>India - 221005</p>
+                        </div>
 
-              <div>
-                <i class="fa fa-envelope" style="font-size:30px text-align:center"></i>
-                <p>info@example.com</p>
-              </div>
+                        <div>
+                            <i class="fa fa-envelope" style="font-size:30px; text-align:center"></i>
+                            <p>info@example.com</p>
+                        </div>
 
-              <div>
-                <i class="fa fa-phone" style="font-size:30px text-align:center"></i>
-                <p>+91 91317 19519</p>
-              </div>
-            </div>
+                        <div>
+                            <i class="fa fa-phone" style="font-size:30px; text-align:center"></i>
+                            <p>+91 91317 19519</p>
+                        </div>
+                    </div>
 
-           
 
-          </div>
+                </div>
 
             </div>
 
-      </div>
+        </div>
     </section><!-- #contact -->
 
-  </main>
+</main>
 
-  <!--==========================
-    Footer
-  ============================-->
-  <footer id="footer">
+<!--==========================
+  Footer
+============================-->
+<footer id="footer">
     <div class="footer-top">
-      <div class="container">
+        <div class="container">
 
-      </div>
+        </div>
     </div>
 
     <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong>COPS</strong>. All Rights Reserved
-      </div>
-	
-      <div class="credits">
-        
-              </div>
+        <div class="copyright">
+            &copy; Copyright <strong>COPS</strong>. All Rights Reserved
+        </div>
+
+        <div class="credits">
+
+        </div>
     </div>
- <div class="social-links text-center">
-              <a href="https://www.facebook.com/cops.iitbhu/" target="_blank" class="facebook"><i class="fa fa-facebook" title="Follow us on Facebook"></i></a>
-              <a href="https://github.com/COPS-IITBHU/" target="_blank" class="github"><i class="fa fa-github" title="follow us on GitHub"></i></a>
-              <a href="https://groups.google.com/forum/#!forum/cops-summer-bootcamp" target="_blank" class="google"><i class="fa fa-google" title="Join our Google Group"></i></a>
-              <a href="https://cops-iitbhu.slack.com/" target="_blank" class="slack"><i class="fa fa-slack" title="Join our workspace on Slack"></i></a>
-              <a href="http://codeforces.com/group/kBMG2k5WAX/blog" target="_blank" class="code"><i class="fa fa-code" title="Join our group on Codeforces"></i></a>
-            </div>
-  </footer><!-- #footer -->
+    <div class="social-links text-center">
+        <a href="https://www.facebook.com/cops.iitbhu/" target="_blank" class="facebook"><i class="fa fa-facebook"
+                                                                                            title="Follow us on Facebook"></i></a>
+        <a href="https://github.com/COPS-IITBHU/" target="_blank" class="github"><i class="fa fa-github"
+                                                                                    title="follow us on GitHub"></i></a>
+        <a href="https://groups.google.com/forum/#!forum/cops-summer-bootcamp" target="_blank" class="google"><i
+                class="fa fa-google" title="Join our Google Group"></i></a>
+        <a href="https://cops-iitbhu.slack.com/" target="_blank" class="slack"><i class="fa fa-slack"
+                                                                                  title="Join our workspace on Slack"></i></a>
+        <a href="http://codeforces.com/group/kBMG2k5WAX/blog" target="_blank" class="code"><i class="fa fa-code"
+                                                                                              title="Join our group on Codeforces"></i></a>
+    </div>
+</footer><!-- #footer -->
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
- <!-- JavaScript Libraries -->
-  <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
-  <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'lib/easing/easing.min.js' %}"></script>
-  <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+<!-- JavaScript Libraries -->
+<script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+<script src="https://firebasestorage.googleapis.com/v0/b/cops-iitbhu.appspot.com/o/bootstrap.bundle.min.js?alt=media&token=4e419bbe-683e-4e02-b87f-c50822033849"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/wow/wow.min.js' %}"></script>
 
-  <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
-  <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
-  <script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
-  <script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+<script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
+<script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
 
-  <!-- Template Main Javascript File -->
-  <script src="{% static 'js/main.js' %}"></script>
-
+<!-- Template Main Javascript File -->
+<script src="{% static 'js/main.js' %}"></script>
 
 
 </body>
