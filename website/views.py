@@ -59,7 +59,7 @@ class PostsPageView(TemplateView):
 
         posts.append(temp)
 
-    template_name = "blog/posts.html"
+    template_name = "posts.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

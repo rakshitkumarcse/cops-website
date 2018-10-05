@@ -1,112 +1,1261 @@
-{% extends "base.html" %}
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
-{% block content %}
-    <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Posts Home </h1>
+<!--
+---- Clean html template by http://WpFreeware.com
+---- This is the main file (index.html).
+---- You are allowed to change anything you like. Find out more Awesome Templates @ wpfreeware.com
+---- Read License-readme.txt file to learn more.
+-->
 
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="/">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Posts Page 1</li>
-      </ol>
+<head>
+    <title>Home Blog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Oswald Font -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.css"/>
+    <!-- home slider-->
+    <link href="https://cdn.jsdelivr.net/npm/pgwslider@2.3.1/pgwslider.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style media="screen" type="text/css">
+        /*
+Template Name: Yellow Blog
+Template URI: http://www.wpfreeware.com/yellow-blog/
+Author: WpFreeware
+Author URI: http://www.wpfreeware.com
+Description: A Pro bloging responsive website template
+Version: 1.0
+License: GPL 2.0 or Later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-      <div class="row">
+*/
 
-        <!-- Blog Entries Column -->
-        <div class="col-md-8">
+        * {
+            margin: 0;
+            padding: 0
+        }
 
-            {#  Add posts by reading the contents of `posts` folder  #}
-            {%  for post in list_of_posts %}
+        body {
+            font-family: Arial;
+            font-size: 14px;
+            line-height: 20px
+        }
 
-              <!-- Blog Post -->
-              <div class="card mb-4">
-                <div style="width: 40%">
-                   <img class="card-img-top" style="max-height: 100%;max-width: 100%;" src="{{ post.3 }}">
-                </div>
-                <div class="card-body">
-                  <h2 class="card-title">{{ post.0 }}</h2>
-                  <p class="card-text">
-                      {% for tag in post.2 %}
-                          <a href="#">#{{ tag }}</a>
-                      {% endfor %}
-                  </p>
-                  <a href="/markdown/?id=posts/{{ post.5 }}" class="btn btn-primary">Read More</a>
-                </div>
-                <div class="card-footer text-muted">
-                  Posted on {{ post.4 }} by
-                  <a href="/contact">{{ post.1 }}</a>
-                </div>
-              </div>
+        a {
+            text-decoration: none;
+            color: #000;
+        }
 
-            {% endfor %}
+        a:hover {
+            text-decoration: none
+        }
 
-          <!-- Pagination -->
-          <ul class="pagination justify-content-center mb-4">
-            <li class="page-item">
-              <a class="page-link" href="#">&larr; Older</a>
-            </li>
-            <li class="page-item disabled">
-              <a class="page-link" href="#">Newer &rarr;</a>
-            </li>
-          </ul>
+        input[type=text], input[type=password], input[type=submit], textarea {
+            border: 1px solid #ddd;
+            padding: 5px;
+            outline: 0;
+        }
 
-        </div>
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+            margin: 0 0 15px;
+            font-family: 'Oswald', sans-serif;
+        }
 
-        <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
+        h2 {
+            font-size: 25px;
+            line-height: 30px
+        }
 
-          <!-- Search Widget -->
-          <div class="card mb-4">
-            <h5 class="card-header">Search</h5>
-            <div class="card-body">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
-                </span>
-              </div>
+        img {
+            max-width: 100%;
+            height: auto;
+            border: none
+        }
+
+        .alignleft {
+            float: left;
+            margin-right: 10px
+        }
+
+        .aligncenter {
+            display: block;
+            margin: 10px auto
+        }
+
+        .alignright {
+            float: right;
+            margin-left: 10px
+        }
+
+        .floatleft {
+            float: left
+        }
+
+        .floatright {
+            float: right
+        }
+
+        .wrapper {
+            width: 1020px;
+            display: block;
+            margin: 0 auto
+        }
+
+        .clearfix {
+            overflow: hidden
+        }
+
+        ul, ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #selectnav1 {
+            display: none;
+        }
+
+        /* home page style */
+        #header_area {
+            background: url("images/header_bg.png") repeat-x scroll 0 0 #000;
+        }
+
+        #content_area {
+            background: url("images/body_top_bg.png") repeat-x scroll center top #fff;
+            padding-top: 25px;
+        }
+
+        #footer_top_area {
+            background: none repeat scroll 0 0 #171716;
+            margin-top: 25px;
+            padding: 20px 0;
+            border-top: 5px solid #FFD500;
+        }
+
+        #footer_bottom_area {
+            padding: 15px 0px;
+            background: #222;
+        }
+
+        .header {
+        }
+
+        .header_top {
+            padding: 15px 0;
+        }
+
+        .logo {
+        }
+
+        .logo a {
+        }
+
+        .logo a h1 {
+            color: #fff;
+            font-family: oswald;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 40px;
+            text-transform: uppercase;
+        }
+
+        .logo a h1 span {
+            color: #ffd500;
+        }
+
+        .search {
+            background: none repeat scroll 0 0 #2c2c2b;
+            border: 1px solid #595957;
+            padding: 5px;
+        }
+
+        .search input[type="text"] {
+            background: none;
+            border: none;
+            outline: 0;
+            color: #999;
+            width: 200px;
+        }
+
+        .search input[type="submit"] {
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;
+            background: url("images/search.png") no-repeat scroll 5px 0px rgba(0, 0, 0, 0);
+            border-color: -moz-use-text-color -moz-use-text-color -moz-use-text-color #595957;
+            border-image: none;
+            border-style: none none none solid;
+            border-width: medium medium medium 1px;
+            cursor: pointer;
+            height: 22px;
+            padding-left: 5px;
+            text-indent: -99999px;
+            width: 33px;
+        }
+
+        .header_bottom {
+            background: none repeat scroll 0 0 #ffd500;
+            min-height: 30px;
+            padding: 10px;
+        }
+
+        /* dropdown menu*/
+        .header_bottom ul {
+            list-style: none outside none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header_bottom ul li {
+            float: left;
+            position: relative;
+        }
+
+        .header_bottom ul li a {
+            display: block;
+            font-family: oswald;
+            font-size: 15px;
+            padding: 5px 15px;
+        }
+
+        .header_bottom ul li a:hover {
+            background: #f5f5f5 url(images/menu_item.png) no-repeat scroll left center;
+            -webkit-transition: background 300ms ease-in;
+            -moz-transition: background 300ms ease-in;
+            -ms-transition: background 300ms ease-in;
+            -o-transition: background 300ms ease-in;
+            transition: background 300ms ease-in;
+        }
+
+        /* dropdown menu 2nd level*/
+        #dropdown {
+            background: url("images/down.png") no-repeat scroll right 8px rgba(0, 0, 0, 0);
+            padding-right: 2px;
+        }
+
+        .header_bottom ul li ul {
+            background: none repeat scroll 0 0 #FFD500;
+            left: -99999px;
+            position: absolute;
+            z-index: 1000;
+            transition: all .3s ease 0s;
+            -moz-transition: all .3s ease 0s;
+            -webkit-transition: all .3s ease 0s;
+            -o-transition: all .3s ease 0s;
+            -ms-transition: all .3s ease 0s;
+        }
+
+        .header_bottom ul li:hover ul {
+            left: 0px;
+            top: 30px
+        }
+
+        .header_bottom ul li ul li {
+            width: 200px;
+            border-bottom: 1px solid #ddd
+        }
+
+        .header_bottom ul li ul li:last-child {
+            border-bottom: 0px;
+        }
+
+        .header_bottom ul li ul li a {
+            padding: 10px;
+        }
+
+        .header_bottom ul ul li a:hover {
+            background: #f5f5f5 url(images/menu_item.png) no-repeat scroll left center;
+            -webkit-transition: background 300ms ease-in;
+            -moz-transition: background 300ms ease-in;
+            -ms-transition: background 300ms ease-in;
+            -o-transition: background 300ms ease-in;
+            transition: background 300ms ease-in;
+            padding-left: 15px;
+            transition: all .3s ease 0s;
+            -moz-transition: all .3s ease 0s;
+            -webkit-transition: all .3s ease 0s;
+            -o-transition: all .3s ease 0s;
+            -ms-transition: all .3s ease 0s;
+        }
+
+        .main_content_area {
+        }
+
+        .main_content {
+            width: 690px;
+            margin-right: 10px;
+        }
+
+        .slider {
+            background: url("images/slider_bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+            margin-bottom: 35px;
+            padding: 5px;
+        }
+
+        .content {
+        }
+
+        .content_title {
+            background: url("images/latest_post_bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+            height: 73px;
+            margin-bottom: 15px;
+        }
+
+        .content_title h2 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 0;
+            padding: 8px;
+            text-transform: uppercase;
+        }
+
+        .single_content {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #E7E7E7;
+        }
+
+        .single_content:last-child {
+            border-bottom: none;
+        }
+
+        .post_date {
+            background: none repeat scroll 0 0 #c3c3c3;
+            margin-right: 10px;
+            padding: 5px;
+        }
+
+        .post_date .date {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .post_date h3 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .post_date p {
+            font-size: 14px;
+            font-family: oswald;
+        }
+
+        .post_detail {
+        }
+
+        .post_detail > a {
+            background: url("images/nav_right.png") no-repeat scroll 130px 4px #ffd500;
+            display: block;
+            font-family: oswald light;
+            margin-top: 10px;
+            padding: 5px 10px;
+            width: 140px;
+            float: right;
+        }
+
+        .post_detail > a:hover {
+            font-family: oswald;
+        }
+
+        .post_detail h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .post_detail h2 a {
+        }
+
+        .post-meta {
+            margin-bottom: 25px;
+        }
+
+        .post-meta p {
+        }
+
+        .post-meta p span {
+            background: none repeat scroll 0 0 #ecebeb;
+            color: #999;
+            padding: 5px 14px;
+        }
+
+        .post-meta p span i {
+            color: #A09E9E;
+        }
+
+        .post_excerpt {
+        }
+
+        .post_excerpt img {
+            float: left;
+            margin-right: 10px;
+            width: 220px;
+            height: 150px;
+        }
+
+        .post_excerpt p {
+        }
+
+        .pagination {
+            margin-bottom: 15px;
+        }
+
+        .pagination ul {
+            text-align: center;
+        }
+
+        .pagination ul li {
+            display: inline-block;
+            margin-right: 3px;
+        }
+
+        .pagination ul li a {
+            background: none repeat scroll 0 0 #e7e7e7;
+            color: #999;
+            padding: 5px 8px;
+        }
+
+        .pagination ul li a:hover {
+            background: #464646;
+            color: #fff;
+        }
+
+        .sidebar_container {
+            background: none repeat scroll 0 0 #fff;
+            width: 300px;
+        }
+
+        .newsletter {
+            padding: 10px;
+            border-bottom: 3px solid #ddd;
+            margin-bottom: 25px;
+        }
+
+        .newsletter form > h2, .newsletter > h2 {
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .newsletter form input[type=text] {
+            height: 25px;
+            width: 250px;
+            margin-bottom: 15px;
+            box-shadow: inset 0px 0px 50px 0px #999999;
+            -webkit-box-shadow: inset 0px 0px 50px 0px #999999;
+            -moz-box-shadow: inset 0px 0px 50px 0px #999999;
+            -o-box-shadow: inset 0px 0px 50px 0px #999999;
+        }
+
+        .newsletter input[type=email] {
+            border: 1px solid #ddd;
+            height: 35px;
+            padding-left: 5px;
+            width: 257px;
+            margin-bottom: 15px;
+            box-shadow: inset 0px 0px 50px 0px #999999;
+            -webkit-box-shadow: inset 0px 0px 50px 0px #999999;
+            -moz-box-shadow: inset 0px 0px 50px 0px #999999;
+            -o-box-shadow: inset 0px 0px 50px 0px #999999;
+        }
+
+        .newsletter form input[type=submit] {
+            background: url("images/nav_right.png") no-repeat scroll 90px 6px #ffd500;
+            border: medium none;
+            font-family: oswald light;
+            font-size: 14px;
+            padding: 8px;
+            text-transform: uppercase;
+            width: 120px;
+            cursor: pointer;
+        }
+
+        .sidebar {
+        }
+
+        .single_sidebar > h2 {
+        }
+
+        .single_sidebar {
+            background: url("images/slider_bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+            padding: 10px;
+            margin-bottom: 25px;
+        }
+
+        .sidebar_title {
+            background: url("images/title_down.png") no-repeat scroll 12px 45px rgba(0, 0, 0, 0);
+            height: 73px;
+            margin-bottom: 15px;
+        }
+
+        .sidebar_title > h2 {
+            background: none repeat scroll 0 0 #222222;
+            color: #fff;
+            font-size: 16px;
+            margin-left: -10px;
+            margin-top: -10px;
+            padding: 8px 10px;
+            text-transform: uppercase;
+            width: 100%;
+        }
+
+        /*popular post*/
+        .single_sidebar .popular_post ul {
+        }
+
+        .single_sidebar .popular_post ul li {
+        }
+
+        .single_sidebar .popular_post ul li a {
+            display: block;
+            background: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-family: oswald;
+            box-shadow: 1px 4px 3px -2px #DDDDDD;
+            -webkit-box-shadow: 1px 4px 3px -2px #DDDDDD;
+            -moz-box-shadow: 1px 4px 3px -2px #DDDDDD;
+            -o-box-shadow: 1px 4px 3px -2px #DDDDDD;
+        }
+
+        .single_sidebar .popular_post ul li a:hover {
+            background: #FFD500;
+            -webkit-transition: background 300ms ease-in;
+            -moz-transition: background 300ms ease-in;
+            -ms-transition: background 300ms ease-in;
+            -o-transition: background 300ms ease-in;
+            transition: background 300ms ease-in;
+        }
+
+        /*Category*/
+        .single_sidebar .cat-item {
+            background: none repeat scroll 0 0 #454545;
+            color: #ffd500;
+            font-weight: bold;
+            margin-bottom: 5px;
+            padding: 5px;
+            text-align: right;
+        }
+
+        .single_sidebar .cat-item a {
+            color: #ddd;
+            display: inline-block;
+            font-weight: normal;
+            width: 80%;
+        ] text-align: left;
+            float: left;
+        }
+
+        .single_sidebar .cat-item a:hover {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .single_sidebar .cat-item:hover {
+            color: #000;
+            background: #FFD500;
+            -webkit-transition: background 300ms ease-in;
+            -moz-transition: background 300ms ease-in;
+            -ms-transition: background 300ms ease-in;
+            -o-transition: background 300ms ease-in;
+            transition: background 300ms ease-in;
+        }
+
+        /*default sidebar list item*/
+        .single_sidebar > ul {
+        }
+
+        .single_sidebar > ul li {
+            margin-bottom: 10px;
+            padding: 5px;
+            background: #fff;
+        }
+
+        .single_sidebar > ul li a {
+        }
+
+        .single_sidebar > ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer_top {
+        }
+
+        .footer_top_container {
+            margin-left: -20px;
+        }
+
+        .single_footer_top {
+            color: #999;
+            margin-left: 20px;
+            width: 326px;
+        }
+
+        .single_footer_top h2 {
+            color: #FFD500;
+        }
+
+        .single_footer_top h1 {
+            color: #FFD500;
+        }
+
+        .single_footer_top a {
+            color: #ddd;
+        }
+
+        .single_footer_top ul {
+        }
+
+        .single_footer_top ul li {
+        }
+
+        .single_footer_top ul li a {
+            background: none repeat scroll 0 0 #000;
+            color: #ddd;
+            display: block;
+            margin-bottom: 5px;
+            padding: 8px;
+            font-family: oswald light;
+        }
+
+        .single_footer_top ul li a:hover {
+            background: #FFD500;
+            color: #000;
+        }
+
+        .footer_bottom {
+        }
+
+        .copyright {
+            font-family: oswald;
+            margin-top: 8px;
+        }
+
+        .copyright p {
+            color: #fff;
+        }
+
+        .copyright span {
+            color: #ffd500;
+        }
+
+        .social {
+        }
+
+        .social ul {
+        }
+
+        .social ul li {
+            float: left;
+        }
+
+        .social ul li a {
+            color: #fff;
+            display: block;
+            font-size: 25px;
+            padding: 5px;
+        }
+
+        .social ul li a:hover {
+            color: #FFD500;
+        }
+
+        /* Single page style */
+
+        .content h1 {
+            font-size: 25px;
+            line-height: 30px;
+        }
+
+        .content h2, .content h3, .content h4, .content h5, .content h6 {
+            font-size: 16px;
+        }
+
+        .rectangle_large {
+            width: 336px;
+            height: 280px;
+            box-shadow: 1px 1px 13px -2px #DDDDDD;
+            -webkit-box-shadow: 1px 1px 13px -2px #DDDDDD;
+            -moz-box-shadow: 1px 1px 13px -2px #DDDDDD;
+            -o-box-shadow: 1px 1px 13px -2px #DDDDDD;
+            display: block;
+        }
+
+        .rectangle_medium {
+            width: 300px;
+            height: 250px;
+            box-shadow: 1px 1px 13px -2px #DDDDDD;
+            -webkit-box-shadow: 1px 1px 13px -2px #DDDDDD;
+            -moz-box-shadow: 1px 1px 13px -2px #DDDDDD;
+            -o-box-shadow: 1px 1px 13px -2px #DDDDDD;
+            display: block;
+        }
+
+        blockquote {
+            border-left: 3px solid #ffd500;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-left: 50px;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f5f5f5;
+        }
+
+        .more_post_container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px 0 #ddd;
+            padding: 10px;
+        }
+
+        .more_post_container h2 {
+            border-left: 5px solid #ffd500;
+            margin-bottom: 0;
+            padding: 5px;
+        }
+
+        .more_post {
+            background: none repeat scroll 0 0 #f5f5f5;
+            border-left: 5px solid #ddd;
+            padding: 10px 5px;
+        }
+
+        .more_post a {
+            display: block;
+            margin-bottom: 2px;
+            color: #000
+        }
+
+        .more_post a:hover {
+            color: #FFD500;
+            font-weight: bold;
+        }
+
+        .advertisement_container {
+        }
+
+        .advertisement {
+        }
+
+        .content ul {
+            margin-left: 30px;
+        }
+
+        .content ul li {
+            margin-bottom: 5px;
+            color: #222;
+        }
+
+        .content ul li a {
+            color: #222;
+            display: block;
+            padding: 5px;
+        }
+
+        .content ul li a:hover {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 14px;
+            background: #FFD500;
+            margin: 15px 5px 15px 0px;
+            font-family: oswald;
+        }
+
+        .btn:hover {
+            background: #F1B215
+        }
+
+        /*Related post */
+
+        .more_themes {
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        .more_themes > h2 {
+            background: url("images/slider_bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+            font-weight: bold;
+            margin-bottom: 30px;
+            padding: 8px;
+        }
+
+        .more_themes h2 i {
+            color: #ffd500;
+        }
+
+        .more_themes_container {
+            margin-left: -15px;
+        }
+
+        .single_more_themes {
+            margin-left: 15px;
+            width: 220px;
+            background: #FFD500;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .single_more_themes img {
+        }
+
+        .single_more_themes a h2 {
+            color: #000;
+            font-size: 14px;
+            margin-bottom: 0;
+            padding: 5px;
+            text-align: center;
+        }
+
+        /*Related post for work*/
+
+        .more_works {
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        .more_works > h2 {
+            background: none repeat scroll 0 0 #454545;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 30px;
+            padding: 8px;
+            border-left: 5px solid #FFD500;
+        }
+
+        .more_works h2 i {
+            color: #ffd500;
+        }
+
+        .more_works_container {
+            margin-left: -15px;
+        }
+
+        .single_more_works {
+            background: none repeat scroll 0 0 #222;
+            margin-bottom: 15px;
+            margin-left: 15px;
+            width: 220px;
+        }
+
+        .single_more_works img {
+        }
+
+        .single_more_works a h2 {
+            color: #ffd500;
+            font-size: 14px;
+            margin-bottom: 0;
+            padding: 5px;
+        }
+
+        /* work page style*/
+
+        .single_work_container {
+            margin-left: -15px;
+        }
+
+        .single_work {
+            float: left;
+            margin-left: 15px;
+            width: 337px;
+            position: relative;
+            margin-bottom: 15px;
+            height: 190px;
+            background: url(images/work_bg.png) repeat scroll 0 0 #222;
+        }
+
+        .single_work:hover img.img_bottom {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.7;
+            transition: all 1.3s ease 0s;
+            -moz-transition: all 1.3s ease 0s;
+            -webkit-transition: all 1.3s ease 0s;
+            -o-transition: all 1.3s ease 0s;
+            -ms-transition: all 1.3s ease 0s;
+        }
+
+        .single_work:hover p.caption {
+            position: absolute;
+            bottom: 0;
+            color: #fff;
+            padding: 5px;
+        }
+
+        .single_work img {
+        }
+
+        .single_work h2 {
+            background: none repeat scroll 0 0 #ffd500;
+            font-size: 16px;
+            left: 0;
+            padding: 5px 10px;
+            position: absolute;
+            top: 0;
+            font-size: 16px;
+            font-family: oswald;
+        }
+
+        .work_pagination {
+            width: 98%;
+            margin-left: 15px;
+        }
+
+        .work_pagination .newer, .work_pagination .older {
+            background: none repeat scroll 0 0 #454545;
+            color: #ffd500;
+            display: block;
+            font-family: oswald;
+            padding: 10px;
+        }
+
+        .work_pagination .newer:hover, .work_pagination .older:hover {
+            background: #222;
+        }
+
+        /* single work page style */
+        .single_work_page {
+            background: #f5f5f5;
+        }
+
+        .work_single_page_feature {
+        }
+
+        .work_single_page_feature img {
+        }
+
+        .work_meta {
+            background: none repeat scroll 0 0 #ddd;
+            padding: 20px;
+        }
+
+        .work_meta p {
+            font-family: sans-serif;
+        }
+
+        .work_meta p span {
+            display: inline-block;
+            font-family: oswald;
+            margin-right: 15px;
+        }
+
+        .work_meta a {
+            font-family: oswald;
+        }
+
+        .single_work_page_content {
+            padding: 10px;
+        }
+
+        /* contact page style */
+
+        .contact_us {
+        }
+
+        .wpcf7-text:focus, .wpcf7-email:focus, .wpcf7-textarea:focus {
+            box-shadow: 0.1px 0.1px 5px 1px #ddd !important;
+            transition: all 0.5s ease-in-out 0s !important;
+        }
+
+        .contact_us form {
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+        .contact_us form p {
+            margin-bottom: 5px;
+        }
+
+        .contact_us form input.wpcf7-text {
+            width: 100%;
+            height: 40px;
+        }
+
+        .contact_us form input.wpcf7-email {
+            width: 100%;
+            height: 40px;
+        }
+
+        .contact_us form textarea.wpcf7-textarea {
+            height: 40px;
+            width: 100%;
+        }
+
+        .contact_us form input.wpcf7-submit {
+            background: #222222;
+            border: medium none;
+            color: #FFD500;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 10px 40px;
+            font-family: oswald;
+        }
+
+        .contact_us form input.wpcf7-submit:hover {
+            background: #FFD500;
+            color: #000;
+        }
+    </style>
+    <link href="https://firebasestorage.googleapis.com/v0/b/cops-iitbhu.appspot.com/o/responsive.css?alt=media&token=d4836aa6-2fd6-47c1-a3b2-526c74b911b0" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+<section id="header_area">
+    <div class="wrapper header">
+        <div class="clearfix header_top">
+            <div class="clearfix logo floatleft">
+                <a href=""><h1><span>COP's</span> Blog</h1></a>
             </div>
-          </div>
-
-          <!-- Categories Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">Web Design</a>
-                    </li>
-                    <li>
-                      <a href="#">HTML</a>
-                    </li>
-                    <li>
-                      <a href="#">Freebies</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">JavaScript</a>
-                    </li>
-                    <li>
-                      <a href="#">CSS</a>
-                    </li>
-                    <li>
-                      <a href="#">Tutorials</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+            <div class="clearfix search floatright">
+                <form>
+                    <input type="text" placeholder="Search"/>
+                    <input type="submit"/>
+                </form>
             </div>
-          </div>
-
         </div>
+        <div class="header_bottom">
+            <nav>
+                <ul id="nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="">Competitive Programming</a></li>
+                    <li><a href="">Machine Learning</a></li>
+                    <li><a href="">Development</a></li>
+                    <li><a href="">Information Security</a></li>
+                    <li><a href="">Cryptography</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="/contact">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
 
-      </div>
-      <!-- /.row -->
+<section id="content_area">
+    <div class="clearfix wrapper main_content_area">
 
-{% endblock %}
+        <div class="clearfix main_content floatleft">
+
+            <div class="clearfix slider">
+                <ul class="pgwSlider">
+                    <li><img src="blog/images/thumbs/megamind_07.jpg" alt="Paris, France"
+                             data-description="Eiffel Tower and Champ de Mars"
+                             data-large-src="images/slides/megamind_07.jpg"/></li>
+                    <li><img src="blog/images/thumbs/wall-e.jpg" alt="Montréal, QC, Canada"
+                             data-large-src="images/slides/wall-e.jpg"
+                             data-description="Eiffel Tower and Champ de Mars"/></li>
+                    <li>
+                        <img src="blog/images/thumbs/up-official-trailer-fake.jpg" alt="Shanghai, China"
+                             data-large-src="images/slides/up-official-trailer-fake.jpg"
+                             data-description="Shanghai ,chaina">
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="clearfix content">
+                <div class="content_title"><h2>Latest Blog Post</h2></div>
+
+                <div class="clearfix single_content">
+                    <div class="clearfix post_date floatleft">
+                        <div class="date">
+                            <h3>27</h3>
+                            <p>January</p>
+                        </div>
+                    </div>
+                    <div class="clearfix post_detail">
+                        <h2><a href="">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. </a></h2>
+                        <div class="clearfix post-meta">
+                            <p><span><i class="fa fa-user"></i> Admin</span> <span><i class="fa fa-clock-o"></i> 20 Jan 2014</span>
+                                <span><i class="fa fa-comment"></i></span> <span><i
+                                        class="fa fa-folder"></i> Category</span></p>
+                        </div>
+                        <div class="clearfix post_excerpt">
+                            <img src="blog/images/thumb.png" alt=""/>
+                            <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a
+                                ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class
+                                aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos </p>
+                        </div>
+                        <a href="blog/single.html">Continue Reading</a>
+                    </div>
+                </div>
+
+                <div class="clearfix single_content">
+                    <div class="clearfix post_date floatleft">
+                        <h3>27</h3>
+                        <p>January</p>
+                    </div>
+                    <div class="clearfix post_detail">
+                        <h2><a href="">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. </a></h2>
+                        <div class="clearfix post-meta">
+                            <p><span>Admin</span> <span>20 Jan 2014</span><span>Category</span></p>
+                        </div>
+                        <div class="clearfix post_excerpt">
+                            <img src="blog/images/thumb.png" alt=""/>
+                            <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a
+                                ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class
+                                aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos </p>
+                        </div>
+                        <a href="blog/single.html">Continue Reading</a>
+                    </div>
+                </div>
+
+                <div class="clearfix single_content">
+                    <div class="clearfix post_date floatleft">
+                        <h3>27</h3>
+                        <p>January</p>
+                    </div>
+                    <div class="clearfix post_detail">
+                        <h2><a href="">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. </a></h2>
+                        <div class="clearfix post-meta">
+                            <p><span>Admin</span> <span>20 Jan 2014</span><span>Category</span></p>
+                        </div>
+                        <div class="clearfix post_excerpt">
+                            <img src="blog/images/thumb.png" alt=""/>
+                            <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a
+                                ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class
+                                aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos </p>
+                        </div>
+                        <a href="blog/single.html">Continue Reading</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <nav>
+                    <ul>
+                        <li><a href=""> << </a></li>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href=""> >> </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="clearfix sidebar_container floatright">
+            <div class="clearfix sidebar">
+                <div class="clearfix single_sidebar">
+                    <div class="popular_post">
+                        <div class="sidebar_title"><h2>Most Popular</h2></div>
+                        <ul>
+                            <li><a href="">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. </a></li>
+                            <li><a href="">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. </a></li>
+                            <li><a href="">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. </a></li>
+                            <li><a href="">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. </a></li>
+                            <li><a href="">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix single_sidebar category_items">
+                    <h2>Categories</h2>
+                    <ul>
+                        <li class="cat-item"><a href="">Competitive Programming</a>(12)</li>
+                        <li class="cat-item"><a href="">Machine Learning</a>(12)</li>
+                        <li class="cat-item"><a href="">Development</a>(12)</li>
+                        <li class="cat-item"><a href="">Cryptography</a>(12)</li>
+                        <li class="cat-item"><a href="">Information Security</a>(12)</li>
+                    </ul>
+                </div>
+                <div class="clearfix single_sidebar">
+                    <h2>Recent Post</h2>
+                    <ul>
+                        <li><a href="">Competitive Programming<span>(1)</span></a></li>
+                        <li><a href="">Machine Learning<span>(12)</span></a></li>
+                        <li><a href="">Development<span>(12)</span></a></li>
+                        <li><a href="">Cryptography<span>(12)</span></a></li>
+                        <li><a href="">Information Security<span>(12)</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a name="contact_us"></a>
+<section id="footer_top_area">
+    <div class="clearfix wrapper footer_top">
+        <div class="clearfix footer_top_container" style="text-align:center">
+            <div class="clearfix single_footer_top floatleft">
+                <br><br><br>
+                <strong><p style="font-size:23px"><i class="fa fa-phone" style="font-size:25px;color:Tomato"></i>
+                    +91-999999999</p></strong>
+            </div>
+            <div class="clearfix single_footer_top floatleft">
+                <h1 style="text-align:center">Contact Us</h1><br>
+                <strong><p style="font-size:23px"><i class="fa fa-map-marker" style="font-size:25px;color:Tomato"></i>
+                    IIT-(BHU) Varanasi, U.P<br><br> Pin Code:-221005</p></strong>
+            </div>
+            <div class="clearfix single_footer_top floatleft">
+                <br><br><br>
+                <strong><p style="font-size:23px"><i class="fa fa-envelope" style="font-size:25px;color:Tomato"></i>
+                    info@example.com</p></strong>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section id="footer_bottom_area">
+    <div class="clearfix wrapper footer_bottom">
+        <div class="clearfix copyright floatleft">
+            <p style="font-size:20px">Copyright &copy; All rights reserved by <span>COPS</span></p>
+        </div>
+        <div class="clearfix social floatright">
+            <ul>
+                <li><a class="tooltip" title="Facebook" href=""><i class="fa fa-facebook-square"></i></a></li>
+                <li><a class="tooltip" title="Twitter" href=""><i class="fa fa-twitter-square"></i></a></li>
+                <li><a class="tooltip" title="Google+" href=""><i class="fa fa-google-plus-square"></i></a></li>
+                <li><a class="tooltip" title="LinkedIn" href=""><i class="fa fa-linkedin-square"></i></a></li>
+                <li><a class="tooltip" title="tumblr" href=""><i class="fa fa-tumblr-square"></i></a></li>
+                <li><a class="tooltip" title="Pinterest" href=""><i class="fa fa-pinterest-square"></i></a></li>
+                <li><a class="tooltip" title="RSS Feed" href=""><i class="fa fa-rss-square"></i></a></li>
+                <li><a class="tooltip" title="Sitemap" href=""><i class="fa fa-sitemap"></i> </a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.tooltip').tooltipster();
+    });
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/selectnav.js/0.1.0/selectnav.min.js"></script>
+<script type="text/javascript">
+    selectnav('nav', {
+        label: '-Navigation-',
+        nested: true,
+        indent: '-'
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/pgwslider@2.3.1/pgwslider.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.pgwSlider').pgwSlider({
+
+            intervalDuration: 5000
+
+        });
+    });
+</script>
+</body>
+</html>
