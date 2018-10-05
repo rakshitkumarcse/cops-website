@@ -19,10 +19,6 @@ class TimelinePageView(TemplateView):
     template_name = "timeline.html"
 
 
-class AboutPageView(TemplateView):
-    template_name = "about.html"
-
-
 class PostsPageView(TemplateView):
     # Read the files in `posts` folder
     files = [f for f in listdir('posts')]
